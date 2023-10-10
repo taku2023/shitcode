@@ -1,0 +1,33 @@
+openapi: '3.0.2'
+info:
+  title: Shitcode Server API
+  version: '0.0.1'
+servers:
+  - url: http://localhost:8080/api
+paths:
+  /users/{id}:
+    get:
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+    post:
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK              
+  /posts:
+    get:
+      parameters:
+        -   
+          

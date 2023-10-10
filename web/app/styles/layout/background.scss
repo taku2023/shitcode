@@ -1,0 +1,10 @@
+@use "../variables" as *;
+
+.background{
+	background-color: $background-color;
+	&--invert{
+		background-color: $background-invert-color;
+	}
+}
+
+

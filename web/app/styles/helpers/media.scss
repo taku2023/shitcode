@@ -1,0 +1,23 @@
+@use "../_variables" as *;
+
+@mixin is-($name){
+	$bp : map-get($map: $breakpoints, $key: $name);
+	@media (min-width: $bp) {
+		@content;
+	}
+}
+
+@mixin scheme-($theme){
+	@media (prefers-color-scheme: $theme){
+		@content;
+	}
+}
+
+
+@each $name,$bp in $breakpoints{
+	.show-#{$name}{		
+		@media (max-width: calc($bp - 1px)){
+			display: none;
+		}
+	}	
+}

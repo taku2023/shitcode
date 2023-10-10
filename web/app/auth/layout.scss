@@ -1,0 +1,24 @@
+@use "@/app/styles/helpers/_all" as *;
+
+.auth{
+	min-height: 100vh;
+	padding: 1rem;
+
+	display: grid;
+	grid-template-columns: 1fr;
+
+	&-aside{
+		display: none;
+		align-self: center;
+		justify-self: center;
+	}
+
+	@include is-("pc"){
+		grid-template-columns: 1fr 1fr;
+		.auth-aside{
+			display: block;
+		}
+	}
+	
+}
+

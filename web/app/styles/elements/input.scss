@@ -1,0 +1,8 @@
+@use "../variables" as *;
+
+.input{
+	padding: .75em 1.0em;
+	font-size: 1.25rem;
+	outline-color: $accent-color;
+}
+

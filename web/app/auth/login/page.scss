@@ -1,0 +1,33 @@
+
+.login{
+	
+	&-title{
+		margin: 4rem auto;
+		text-align: center;
+	}
+
+	&-form{
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		gap: .75rem;
+		width: fit-content;
+		
+		&-button{
+			margin-top: 1.0rem;
+			padding: .75em 1.0em;
+			border-radius: 0.4em;
+			border-style: none;
+		}
+
+		&-label{
+			text-align: right;			
+		}
+	}
+
+	&-twitter{
+		margin-top: 2.0rem;
+		text-align: center;
+		display: block;
+	}
+}
