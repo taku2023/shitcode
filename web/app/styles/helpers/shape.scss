@@ -1,0 +1,40 @@
+
+@use "@/styles/base/_const" as *;
+
+.has-corner-full{
+  border-radius: $shape-corner-full;
+}
+
+.has-corner-large{
+  border-radius: $shape-corner-large;
+}
+
+.has-corner-medium{
+  border-radius: $shape-corner-medium;
+}
+
+.has-corner-small{
+  border-radius: $shape-corner-small;
+}
+
+.has-corner-none{
+  border-radius: $shape-corner-none;
+}
+
+.is-container-small{
+  padding: $shape-padding-container-small;
+}
+
+.is-container-medium{
+  padding: $shape-padding-container-medium;
+}
+
+//border
+.has-border{
+  border: $border-width solid var(--color-outline);
+}
+
+.no-border{
+  border-width: 0px;
+  outline-width: 0px;
+}

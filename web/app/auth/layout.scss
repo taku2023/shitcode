@@ -1,13 +1,12 @@
-@use "@/app/styles/helpers/_all" as *;
+@use "@/styles/helpers/_all" as *;
 
 .auth{
-	min-height: 100vh;
-	padding: 1rem;
 
 	display: grid;
 	grid-template-columns: 1fr;
-
-	&-aside{
+	min-height: 100vh;
+	
+	&--aside{
 		display: none;
 		align-self: center;
 		justify-self: center;
@@ -19,6 +18,14 @@
 			display: block;
 		}
 	}
+
+	&--container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-self: center;
+	}
 	
 }
+
 

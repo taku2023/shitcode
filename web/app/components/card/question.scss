@@ -1,0 +1,47 @@
+.question-card{
+  display: grid;
+  grid-template: 
+    "tags tags" 1fr
+    "title title" 1fr
+    "content content" auto
+    "detail user" 1fr
+    / auto 1fr;
+  align-items: center;
+  justify-items: stretch;
+  
+  &__tags{
+    grid-area: tags;
+    justify-self: start;
+    //container
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 4px;
+  }
+
+  &__title{
+    grid-area: title;
+    justify-self: stretch;
+  }
+
+  &__content{
+    grid-area: content;
+    justify-self: stretch;
+  }
+
+  &__user{
+    grid-area: user;
+    justify-self: end;
+  }
+
+  &__detail{
+    grid-area: detail;
+    justify-self: start;
+    //container
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+}

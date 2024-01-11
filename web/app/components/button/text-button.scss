@@ -1,0 +1,12 @@
+
+.text-button{
+  min-width: max-content;
+  // if container has icon
+  &:has(.icon){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 4px;
+  }
+}

@@ -1,0 +1,39 @@
+@use "_const" as *;
+
+
+@media (prefers-color-scheme:light){
+    :root{
+        --color-surface: #{$color-surface--light};
+        --color-surface-high: #{$color-surface-high--light};
+        --color-surface-low: #{$color-surface-low--light};
+        --color-on-surface-high: #{$color-on-surface-high--light};
+        --color-on-surface-high-variant: #{$color-on-surface-high-variant--light};
+        --color-on-surface: #{$color-on-surface--light};
+        --color-on-surface-variant: #{$color-on-surface-variant--light};
+        --color-on-surface-low: #{$color-on-surface-low--light};
+        --color-on-surface-low-variant: #{$color-on-surface-low-variant--light};
+        --color-container-high: #{$color-container-high--light};
+        --color-container: #{$color-container--light};
+        --color-container-low: #{$color-container-low--light};
+        --color-primary-container: #{$color-primary-container--light};
+        --color-accent-container: #{$color-accent-container--light};
+        --color-on-container-high: #{$color-on-container-high--light};
+        --color-on-container-high-variant: #{$color-on-container-high-variant--light};
+        --color-on-container: #{$color-on-container--light};
+        --color-on-container-variant: #{$color-on-container-variant--light};
+        --color-on-container-low: #{$color-on-container-low--light};
+        --color-on-container-low-variant: #{$color-on-container-low-variant--light};
+        --color-on-primary-container: #{$color-on-primary-container--light};
+        --color-on-primary-container-variant: #{$color-on-primary-container-variant--light};
+        --color-on-accent-container: #{$color-on-accent-container--light};
+        --color-on-accent-container-variant: #{$color-on-accent-container-variant--light};
+        --color-error: #{$color-error--light};
+        --color-outline: #{$color-outline--light};
+        --color-placeholder: #{$color-placeholder--light};
+    }
+}
+
+@media (prefers-color-scheme: dark){
+   
+}
+

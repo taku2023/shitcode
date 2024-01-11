@@ -6,14 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "amazon-cognito-identity-js": "^6.3.6",
+    "axios": "^1.6.5",
     "dayjs": "^1.11.9",
-    "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "material-symbols": "^0.11.0",
     "next": "13.4.19",
@@ -23,10 +26,23 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.6",
+    "@storybook/addon-interactions": "^7.6.6",
+    "@storybook/addon-links": "^7.6.6",
+    "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/blocks": "^7.6.6",
+    "@storybook/nextjs": "^7.6.6",
+    "@storybook/react": "^7.6.6",
+    "@storybook/test": "^7.6.6",
     "@types/uuid": "^9.0.3",
+    "encoding": "^0.1.13",
+    "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-storybook": "^0.6.15",
     "prettier": "^3.0.3",
     "sass": "^1.66.1",
-    "server-only": "^0.0.1"
+    "server-only": "^0.0.1",
+    "storybook": "^7.6.6",
+    "storybook-addon-pseudo-states": "^2.1.2"
   }
 }

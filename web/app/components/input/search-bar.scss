@@ -1,0 +1,13 @@
+.searchBar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 6px;
+
+  .icon{
+    flex: 0 0 24px;
+  }
+  &__input{
+    flex: 1 0 auto;
+  }
+}

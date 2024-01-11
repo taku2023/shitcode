@@ -7,12 +7,14 @@ export default function RootLayout({
 	children: React.ReactNode
 }){
 	return (
-		<div className="auth background--invert">
-			<div className="auth-aside">
+		<div className="auth surface-high">
+			<div className="auth--aside">
 				<h1 className="headline">ShitCode</h1>
-				<p className="title--invert">We can learn from everything</p>
+				<p className="title">We can learn from everything</p>
 			</div>
-			{children}
+			<div className="auth--container">
+				{children}
+			</div>
 		</div>
 	)
 }

@@ -1,0 +1,14 @@
+.menu{
+  &-list{
+    list-style: none;
+  }
+}
+
+.menu-item{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  column-gap: 8px;
+  padding: 4px 8px;
+}

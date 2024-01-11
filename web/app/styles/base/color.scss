@@ -1,0 +1,159 @@
+@use "@/styles/base/_const" as const;
+@use "@/styles/base/_mixin.scss" as mixin;
+@use "sass:color";
+@use "sass:map";
+
+%container-size{ 
+  &.is-small{
+    padding: const.$shape-padding-container-small;
+  }  
+  &,&.is-medium{
+    padding: const.$shape-padding-container-medium;
+  }
+  &.is-large{
+    padding: const.$shape-padding-container-large;
+  }
+}
+
+//surface
+$surface-variants: (
+  surface: (
+    background: var(--color-surface),
+    on-surface: var(--color-on-surface),
+    on-surface-variant: var(--color-on-surface-variant),
+  ),
+  surface-high: (
+    background: var(--color-surface-high),
+    on-surface: var(--color-on-surface-high),
+    on-surface-variant: var(--color-on-surface-high-variant)
+  ),
+  surface-low: (
+    background: var(--color-surface-low),
+    on-surface: var(--color-on-surface-low),
+    on-surface-variant: var(--color-on-surface-low-variant),
+  ),
+);
+
+@each $name,$color-map in $surface-variants{
+  .#{$name}{
+    @extend %container-size;
+    $color: map.get($color-map,on-surface);
+    $color-variant: map.get($color-map,on-surface-variant);
+    background: map.get($color-map,background);
+
+    & :where(:not([class^="container"])) :where(.display,.headline,.title,.body){
+      color: $color;
+    }
+
+    & :where(:not([class^="container"])) :where(.subtitle,.caption,.label){
+      color: $color-variant;
+    }
+  }
+}
+
+$container-variants: (
+  container: (
+    background: var(--color-container),
+    on-container: var(--color-on-container),
+    on-container-variant: var(--color-on-container-variant),
+  ),
+  container-high: (
+    background: var(--color-container-high),
+    on-container: var(--color-on-container-high),
+    on-container-variant: var(--color-on-container-high-variant),
+  ),
+  container-low: (
+    background: var(--color-container-low),
+    on-container: var(--color-on-container-low),
+    on-container-variant: var(--color-on-container-low-variant),
+  ),
+  container-primary: (
+    background: var(--color-primary-container),
+    on-container: var(--color-on-primary-container),
+    on-container-variant: var(--color-on-primary-container-variant),
+  ),
+  container-accent: (
+    background: var(--color-accent-container),
+    on-container: var(--color-on-accent-container),
+    on-container-variant: var(--color-on-accent-container-variant),
+  ),
+);
+
+$states: (
+  hover: const.$opacity-hover,
+  pressed: const.$opacity-pressed,
+  disabled: const.$opacity-disabled,
+  focus: const.$opacity-focus,
+  selected: const.$opacity-selected,
+  activated: const.$opacity-activated,
+  dragged: const.$opacity-dragged,
+);
+
+@each $name,$color-map in $container-variants{
+  .#{$name}{
+    @extend %container-size;
+    
+    $color: map.get($color-map,on-container);
+    $color-variant: map.get($color-map,on-container-variant);
+    $color-background: map.get($color-map,background);   
+    background: $color-background;
+    //state :hover,:focus,:active,etc..
+    @each $state,$opacity in $states{
+      &:#{$state}{    
+      
+        background-color: color-mix(in srgb, $color-background, $color 10%); 
+        //background-color: color.mix(var(--color-container),$color);
+        //@include mixin.layer(map.get($color-map,on-container),$opacity);
+      }
+    }
+    //TODO: :focus,:active,:inactive,:hover,:selected,:activated,:dragged
+   
+    & :where(.display,.headline,.title,.body){
+      color: map.get($color-map,on-container);
+    }
+    &:where(.display,.headline,.title,.body){
+      color: map.get($color-map,on-container)
+    }
+
+    & :where(.subtitle,.caption,.label){
+      color: map.get($color-map,on-container-variant);
+    }
+    &:where(.subtitle,.caption,.label){
+      color: map.get($color-map,on-container-variant);
+    }
+  }
+}
+
+//text color
+.on-surface{
+  color: var(--color-on-surface);
+}
+
+.on-surface-variant{
+  color: var(--color-on-surface-variant);
+}
+
+.on-container{
+  color: var(--color-on-container);
+}
+
+.on-container-variant{
+  color: var(--color-on-container-variant);
+}
+
+.on-container-high{
+  color: var(--color-on-container-high);
+}
+
+.on-container-high-variant{
+  color: var(--color-on-container-high-variant);
+}
+
+.on-container-low{
+  color: var(--color-on-container-low);
+}
+
+.on-container-low-variant{
+  color: var(--color-on-container-low-variant);
+}
+

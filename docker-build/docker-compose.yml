@@ -1,0 +1,18 @@
+version: "3.1"
+services:
+  mysql:
+    image: postgres:latest
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres 
+    volumes:
+      - .:/docker-entrypoint-initdb.d
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+
+  webapp:
+    image: node:18
+    command: ["npm", "arg"]
+      

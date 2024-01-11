@@ -1,8 +1,16 @@
-@use "../variables" as *;
+@use "@/styles/base/_const" as *;
 
 .input{
-	padding: .75em 1.0em;
-	font-size: 1.25rem;
-	outline-color: $accent-color;
+
+	border: $border-width solid var(--color-outline);
+	&::placeholder{
+		color: var(--color-placeholder);		
+	}
+
+	//focus ring
+	&:focus-visible{
+		outline: var(--color-outline) solid 1px;
+	}
 }
+
 

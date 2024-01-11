@@ -1,0 +1,27 @@
+@use "@/styles/base/_const" as *;
+
+@for $i from 1 through 100{
+  .p-#{$i} {
+    padding: calc($padding-unit * $i);
+  }
+  .pt-#{$i} {
+    padding-top: calc($padding-unit * $i);
+  }
+  .pb-#{$i} {
+    padding-bottom: calc($padding-unit * $i);
+  }
+  .pl-#{$i} {
+    padding-left: calc($padding-unit * $i);
+  }
+  .pr-#{$i} {
+    padding-right: calc($padding-unit * $i);
+  }
+  .py-#{$i} {
+    padding-top: calc($padding-unit * $i);
+    padding-bottom: calc($padding-unit * $i);
+  }
+  .px-#{$i} {
+    padding-left: calc($padding-unit * $i);
+    padding-right: calc($padding-unit * $i);
+  }
+}

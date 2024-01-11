@@ -1,14 +1,15 @@
 #!/usr/bin/env node
-import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { VPCStack } from '../lib/vpc-stack';
+import 'source-map-support/register';
 import { ServerStack } from '../lib/server-stack';
+import { VPCStack } from '../lib/vpc-stack';
 
 const app = new cdk.App();
 
-const {vpc} = new VPCStack(app, 'App1/VPCStack', {  
-});
+const stage = new cdk.Stage(app,"dev")
 
-new ServerStack(app,"App1/ServerStack",{
+const {vpc} = new VPCStack(stage, 'VPCStack', {  
+});
+new ServerStack(stage,"ServerStack",{
   vpc
 })

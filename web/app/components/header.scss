@@ -1,0 +1,12 @@
+.header{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items:center;
+  
+
+  .no-decoration{
+    outline: none;
+    border:none;
+  }
+}

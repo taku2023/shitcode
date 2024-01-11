@@ -1,4 +1,11 @@
-@use "../_variables" as *;
+@use "@/styles/base/_const" as *;
+
+$breakpoints: (
+	"mobile": $bp-mobile,
+	"tablet": $bp-tablet,
+	"pc": $bp-pc,
+	"desktop": $bp-desktop,
+);
 
 @mixin is-($name){
 	$bp : map-get($map: $breakpoints, $key: $name);
@@ -13,7 +20,6 @@
 	}
 }
 
-
 @each $name,$bp in $breakpoints{
 	.show-#{$name}{		
 		@media (max-width: calc($bp - 1px)){
@@ -21,3 +27,4 @@
 		}
 	}	
 }
+

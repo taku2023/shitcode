@@ -1,6 +1,8 @@
 import { Construct } from "constructs";
 import { IVpc, InstanceSize, SubnetType } from 'aws-cdk-lib/aws-ec2';
-import { aws_ec2 } from "aws-cdk-lib";
+import { aws_ec2,aws_ecr,aws_ecs} from "aws-cdk-lib";
+import { Operation } from "aws-cdk-lib/aws-dynamodb";
+import { OperatingSystemFamily } from "aws-cdk-lib/aws-ecs";
 
 
 interface Props{
@@ -23,7 +25,32 @@ export class Server extends Construct{
 			instanceType: aws_ec2.InstanceType.of(aws_ec2.InstanceClass.T3,InstanceSize.MICRO),
 			machineImage: aws_ec2.MachineImage.latestAmazonLinux2023()
 		})
-
 		this.ec2 = ec2;
+	}
+}
+
+export class WebServer extends Construct{
+	constructor(scope: Construct,id:string){
+		super(scope,id)
+
+		new aws_ecr.Repository(this,"NextImageRepo",{
+			
+		})
+
+		const taskDef = new aws_ecs.FargateTaskDefinition(this,"WebServerTask",{
+			runtimePlatform: {
+				operatingSystemFamily:OperatingSystemFamily.LINUX,
+			},
+			
+		})
+		taskDef.addContainer("",{
+				image: aws_ecs.ContainerImage.fromRegistry("node:18"),
+				entryPoint:[
+					"sh", "-c"
+				],
+		})
+		
+
+		
 	}
 }

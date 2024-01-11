@@ -1,0 +1,52 @@
+
+@use "_const" as *;
+
+.display{
+    font-family: $text-display-font-family;
+    font-size: $text-display-font-size;
+    font-weight: $text-display-font-weight;
+    line-height: $text-display-line-height;
+}
+
+.headline{
+    font-family: $text-headline-font-family;
+    font-size: $text-headline-font-size;
+    font-weight: $text-headline-font-weight;
+    line-height: $text-headline-line-height;
+}
+
+.title{
+    font-family: $text-title-font-family;
+    font-size: $text-title-font-size;
+    font-weight: $text-title-font-weight;
+    line-height: $text-title-line-height;
+}
+
+.sub-title{
+    font-family: $text-subtitle-font-family;
+    font-size: $text-subtitle-font-size;
+    font-weight: $text-subtitle-font-weight;
+    line-height: $text-subtitle-line-height;
+}
+
+.body{
+    font-family: $text-body-font-family;
+    font-size: $text-body-font-size;
+    font-weight: $text-body-font-weight;
+    line-height: $text-body-line-height;
+}
+
+.label{
+    font-family: $text-label-font-family;
+    font-size: $text-label-font-size;
+    font-weight: $text-label-font-weight;
+    line-height: $text-label-line-height;
+}
+
+.caption{
+    font-family: $text-caption-font-family;
+    font-size: $text-caption-font-size;
+    font-weight: $text-caption-font-weight;
+    line-height: $text-caption-line-height;
+}
+

@@ -1,0 +1,10 @@
+@use "@/styles/base/_const" as *;
+@use "@/styles/base/typography" as *;
+@use "@/styles/base/color.scss" as *;
+@use "@/styles/base/_mixin.scss" as *;
+
+
+.link{
+  @extend .body;
+  text-decoration: underline;  
+}

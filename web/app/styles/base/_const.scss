@@ -1,0 +1,124 @@
+@use "_palette.scss" as *;
+
+//surface
+$color-surface--light: #FCFCFC;
+$color-surface-high--light: #FFFFFF;
+$color-surface-low--light: #F4F4F4;
+
+//on-surface
+$color-on-surface-high--light: #151515;
+$color-on-surface-high-variant--light: #363636;
+$color-on-surface--light: #151515;
+$color-on-surface-variant--light: #363636;
+$color-on-surface-low--light: #363636;
+$color-on-surface-low-variant--light: #363636;
+
+//container
+$color-container-high--light: #FFFFFF;  
+$color-container--light: #F4F4F4;
+$color-container-low--light: #F1F1F1;
+$color-primary-container--light: #B62500;
+$color-accent-container--light:#1D1B20;
+
+//on-container
+$color-on-container-high--light: #151515;
+$color-on-container-high-variant--light: #363636;
+$color-on-container--light: #363636;
+$color-on-container-variant--light: #363636;
+$color-on-container-low--light: #303030;
+$color-on-container-low-variant--light: #545454;
+
+$color-on-primary-container--light: #FFFFFF;
+$color-on-primary-container-variant--light: #FFFFFF;
+$color-on-accent-container--light: #FFFFFF;
+$color-on-accent-container-variant--light: #FFFFFF;
+
+$color-error--light: red; //TODO: rewrite
+$color-placeholder--light: #8B8B8B;
+//outline
+
+
+$color-outline--light: #505050;
+$color-outline-variant--light: #808080;
+
+//typography
+$text-display-font-family: Arial, sans-serif;
+$text-headline-font-family: Arial, sans-serif;
+$text-title-font-family: Arial, sans-serif;
+$text-subtitle-font-family: Arial, sans-serif;
+$text-body-font-family: Arial, sans-serif;
+$text-label-font-family: Arial, sans-serif;
+$text-caption-font-family: Arial, sans-serif;
+
+//font-weight
+$text-display-font-weight: 800;
+$text-headline-font-weight: 700;
+$text-title-font-weight: 600;
+$text-subtitle-font-weight: 600;
+$text-body-font-weight: 500;
+$text-label-font-weight: 400;
+$text-caption-font-weight: 400;
+//font-size
+$text-display-font-size: 6.0rem;
+$text-headline-font-size: 2.7rem;
+$text-title-font-size: 1.25rem;
+$text-subtitle-font-size: 1.125rem;
+$text-body-font-size: 1.0rem;
+$text-label-font-size: 0.85rem;
+$text-caption-font-size: 0.8rem;
+
+$text-display-line-height: 1.2;
+$text-headline-line-height: 1.2;
+$text-title-line-height: 1.2;
+$text-subtitle-line-height: 1.2;
+$text-body-line-height: 1.2;
+$text-label-line-height: 1.2;
+$text-caption-line-height: 1.2;
+
+//breakpoint
+$bp-mobile: 0px !default;
+$bp-tablet: 720px !default;
+$bp-pc: 1024px !default;
+$bp-desktop: 1280px !default;
+
+
+//state
+$elevate-highest: 12px;
+$elevate-high: 9px;
+$elevate-medium: 8px;
+$elevate-low: 5px;
+$elevate-lowest: 2px;
+
+//opacity
+$opacity-hover: 0.05;
+$opacity-pressed: 0.1;
+$opacity-disabled: 0.3;
+$opacity-focus: 0.2;
+$opacity-selected: 0.1;
+$opacity-activated: 0.1;
+$opacity-dragged: 0.1;
+
+
+//border
+$border-width: 2px;
+$outline-width: 2px;
+
+//shape
+$shape-corner-none: 0px;
+$shape-corner-small: 2px;
+$shape-corner-medium: 6px;
+$shape-corner-large: 12px;
+$shape-corner-full: 9999px;
+
+//padding
+$padding-unit: 4px !default;
+
+$shape-padding-container-small: 3px 4px;
+$shape-padding-container-medium: 6px 10px;
+$shape-padding-container-large: 12px 20px;
+$shape-padding-small: 4px;
+$shape-padding-medium: 8px;
+$shape-padding-large: 12px;
+
+//margin
+$margin-unit: 4px !default;

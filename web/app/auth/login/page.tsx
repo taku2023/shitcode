@@ -1,45 +1,47 @@
-import FormInput from '@/app/components/input/formInput'
-import { AuthContext } from '@/app/layout'
+import FilledButton from '@/components/button/filled-button'
+import FormInput from '@/components/input/form-input'
+import { login } from '@/lib/cognito'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import { useContext } from 'react'
 import './page.scss'
 
-
-async function postLogin(form:FormData){
+const postLogin = async (form: FormData) => {
 	'use server'
-	const data = await fetch('http://localhost:3000/api/auth/login',{
-		method: 'POST',
-		body: JSON.stringify({
-			email: form.get('email'),
-			password: form.get('password')
-		})
+	const email = form.get('email')?.toString()
+	const password = form.get('password')?.toString()
+	
+	if (!email || !password) {
+		console.error('email and password are not null')
+		return
+	}
+	return login(email, password).then((_) => {
+		redirect('home')
 	})
-	const json = await data.json()
-	redirect('/home')
 }
 
-export default function Login(){
-	const {login} = useContext(AuthContext)
-	if (login){
-		redirect('/home')
-	}
-	
+export default function Login() {
 	return (
-		<div className="login">
-			<h1 className="headline-2--invert login-title">Login</h1>
-			<form className="login-form" action={postLogin}>
-				<FormInput id="email" label="Email" name="email" placeholder="shitcode@gmail.com" type="email" ></FormInput>
-				<FormInput id="password" label="Password" name="password" placeholder="******" type="password" ></FormInput>
-				<label className="login-form-label label--invert">
-					<Link href={'/auth/signup'}>Don&apos;t you have account?</Link>
-				</label>
-				<button className="button login-form-button is-clickable" type="submit">
-					Login
-				</button>
-			</form>
-			<label className="label--invert login-twitter">
-				<Link href={'/'}>Or login with X (Former Twitter)</Link>
+		<div className='login surface-high is-medium'>
+			<h1 className="headline mb-10 is-text-center">Login</h1>
+			<form className="login--form" action={postLogin}>
+				<FormInput
+					label="Email"
+					name="email"
+					placeholder="shitcode@gmail.com"
+					type="email"
+				></FormInput>
+				<FormInput
+					label="Password"
+					name="password"
+					placeholder="******"
+					type="password"
+				></FormInput>
+				<Link href={'/auth/login'} className='label login--form--forget'>Forget password?</Link>
+				<FilledButton label="Login with email" mode='accent' className='my-8'/>
+			</form>			
+			<label className="label mt-8">
+				Don&apos;t you have account?
+				<Link href={'/auth/signup'} className='pl-1'>Sign up</Link>
 			</label>
 		</div>
 	)
